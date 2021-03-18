@@ -1,0 +1,51 @@
+.canvas {
+  border: 1px solid #000;
+  height: 70vh;
+  width: 100%;
+  fill: blueviolet;
+}
+
+/* .node-body {
+    height: 35px;
+    width: 60px;
+    fill: rgb(226, 43, 217);
+}
+.node-link {
+    height: 35px;
+    width: 30px;
+    fill: rgb(43, 226, 89);
+    x: 60px;
+} */
+.node-text {
+  fill: #0c0303;
+  text-anchor: middle;
+  -webkit-transform: translate(28px, 20px);
+          transform: translate(28px, 20px);
+  font-size: 9px;
+}
+
+.link-node,
+path {
+  /* transform: translateX(200px) */
+  -webkit-transition: all .3s linear;
+  transition: all .3s linear;
+}
+
+/* svg:hover #link-5 {
+    transition: 2s;
+    d: path("M160 192 Q 60 152, 160 152 Q 810 152, 945 152 T 966 112");
+} */
+.node-body__shrink {
+  /* transform: translate(102px, 32px) scale(.2) !important; */
+  opacity: 0;
+}
+
+text {
+  fill: deepPink;
+  font-size: 2em;
+}
+
+.end-node {
+  -webkit-transform: translate(86px, 15px) !important;
+          transform: translate(86px, 15px) !important;
+}

@@ -1,0 +1,18 @@
+.svg-wrapper {
+    position: relative;
+}
+.status-box {
+    position: absolute;
+    right: 4px;
+    top: 4px;
+    height: 6rem;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    background: transparent;
+}
+#gearOne, #gearTwo  {
+    stroke: #3bba9c;
+    stroke-width: 3px;
+    fill: #2e3047;
+}

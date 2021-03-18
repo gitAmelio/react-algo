@@ -1,0 +1,7 @@
+setting up redux testing
+
+npm install jest @types/jest @babel/core @babel/preset-env babel-jest -D
+
+project root > babel.config.json {
+    "presets": ["@babel/preset-env"]
+}

@@ -1,0 +1,177 @@
+.logo {
+    height: 4rem;
+    width: 4rem;
+    background-image: url(./../../../img/logo_react-algo.png);
+
+}
+#mP3 path{
+    fill:#00ff00;
+    transform: scale(0.5) translate(12px, 5px);
+}
+.node rect {
+    transition: all 0.4s;
+    stroke: white;
+    stroke-width: 2;
+}
+.section-avl {
+    position: relative;
+}
+.status {
+    margin: 2px;
+}
+.status p {
+    border: none;
+    font-size: 1rem;
+    font-family: sans-serif;
+    color: #3bba9c;
+    background: transparent;
+}
+.fade {
+    animation: fade-away 2s forwards;
+}
+.node rect.stepped {
+    transition: all 0.4s;
+    stroke: #d4951f;
+    stroke-width: 2;
+    marker-end: url(#mP3);
+    filter: url(#f2);
+    
+}
+.node rect.rotating {
+    transition: all 0.4s;
+    stroke: #00ff00;
+    stroke-width: 2;
+    marker-end: url(#mP3);
+    filter: url(#f2);
+    
+}
+.links line.stepped {
+    transition: all 0.4s;
+    stroke: #00ff00;
+    stroke-width: 2;
+    marker-end: url(#mP3);
+    filter: url(#f2);
+    
+}
+.node rect.balancing {
+    transition: all 0.4s;
+    stroke-width: 2;
+    marker-end: url(#mP3);
+    filter: url(#f2);
+    animation: balancing 1s infinite;
+
+} 
+.node rect.balanced {
+    transition: all 0.4s;
+    stroke: #eceaf3;
+    stroke-width: 2;
+    marker-end: url(#mP3);
+    filter: url(#f2);
+    animation: balanced 0.9s  3 backwards
+}
+.node rect.unbalanced {
+    transition: all 0.4s;
+    stroke: #eceaf3;
+    stroke-width: 2;
+    marker-end: url(#mP3);
+    filter: url(#f2);
+    animation: unbalanced 0.9s  3 backwards
+}
+.node rect.new-root {
+    transition: all 0.4s;
+    stroke: #00ff00;
+    stroke-width: 2;
+    marker-end: url(#mP3);
+    filter: url(#f2);
+    animation: new-root 0.5s 3
+
+}
+.node rect.deleting {
+    transition: all 0.4s;
+    stroke: #00ff00;
+    stroke-width: 2;
+    marker-end: url(#mP3);
+    filter: url(#f2);
+    animation: deleting 0.5s 3
+
+}
+.node rect.deleted {
+    transform: translate(-150px, -50px);
+    opacity: 0;
+}
+@keyframes balancing {
+    0% {
+        stroke: white;
+        stroke-width: 2;
+    }
+    100% {
+        stroke: #48f1f1;
+        stroke-width: 4;
+    }
+}
+@keyframes balanced {
+    0% {
+        stroke: white;
+        stroke-width: 2;
+    }
+    100% {
+        stroke: rgb(22, 206, 12);
+        stroke-width: 4;
+    }
+}
+@keyframes unbalanced {
+    0% {
+        stroke: white;
+        stroke-width: 2;
+    }
+    100% {
+        stroke: rgb(247, 45, 18);
+        stroke-width: 4;
+    }
+}
+@keyframes new-root {
+    0% {
+        stroke: white;
+        stroke-width: 2;
+    }
+    50% {
+        stroke: #00ff00;
+        stroke-width: 4;
+    }
+    100% {
+        stroke: white;
+        stroke-width: 2;
+    }
+}
+@keyframes leaf {
+    0% {
+        stroke: white;
+        stroke-width: 2;
+    }
+    50% {
+        stroke: #90ec45;
+        stroke-width: 4;
+    }
+    100% {
+        stroke: white;
+        stroke-width: 2;
+    }
+}
+@keyframes deleting {
+    0% {
+        stroke: white;
+        stroke-width: 2;
+    }
+    50% {
+        stroke: #da2d16;
+        stroke-width: 4;
+    }
+    100% {
+        stroke: white;
+        stroke-width: 2;
+    }
+}
+@keyframes fade-away {
+    0% {opacity: 1;}
+    100% {opacity: 0;}
+}
