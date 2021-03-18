@@ -35,12 +35,10 @@ export class Links extends Component {
     render() {
         return (
             <div className="nav">
-                {/* <Link  onClick={this.handleLink} className="nav-link" style={this.linkStyle('Stack LinkList')}  to="/node_link"> */}
                 <Link  onClick={this.handleLink} className={this.cssClass('Stack LinkList')}  to="/node_link">
                     {/* <i className="sign out icon" /> */}
                         Stack LinkList
                 </Link>
-                {/* <Link  onClick={this.handleLink} className="nav-link" style={this.linkStyle('AVL Tree')}  to="/avl_tree"> */}
                 <Link  onClick={this.handleLink} className={this.cssClass('AVL Tree')} to="/avl_tree">
                     {/* <i className="sign out icon" /> */}
                         AVL Tree

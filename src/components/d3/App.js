@@ -33,29 +33,6 @@ const store = createStore(
 
 
 class App extends React.Component {
-    config = {
-        num: [4, 7],
-        rps: 0.1,
-        radius: [1, 4],
-        life: [1.5, 3],
-        v: [2, 5],
-        tha: [-40, 40],
-        alpha: [0.6, 0],
-        scale: [1, 0.1],
-        position: "center", 
-        color: ["random"],
-        cross: "dead", 
-        random: 15,  
-        g: 5,    
-        onParticleUpdate: (ctx, particle) => {
-            ctx.beginPath();
-            ctx.rect(particle.p.x, particle.p.y, particle.radius * 2, particle.radius * 2);
-            ctx.fillStyle = particle.color;
-            ctx.fill();
-            ctx.closePath();
-        }
-    };
-
     render(){
         return (
             <Provider store={store}>

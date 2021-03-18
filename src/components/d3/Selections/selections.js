@@ -1,5 +1,7 @@
 import { select } from 'd3-selection'
-import prettyFormat from 'pretty-format'
+
+// uncomment this to enable node hints
+// import prettyFormat from 'pretty-format'
 
 import * as D from './selections-helpers'
 
@@ -210,8 +212,8 @@ const enterNode = (shape='rect') => (selection ) => {
  
     }
 
-    node.append('title')
-        .text(d => prettyFormat(d))    
+    // node.append('title')
+    //     .text(d => prettyFormat(d))    
 
 
     selection.select('#node-0 rect')
@@ -299,8 +301,8 @@ const updateNode = (shape='rect') => selection => {
 
     }
 
-    selection.select('title')
-        .text(d => prettyFormat(d))    
+    // selection.select('title')
+    //     .text(d => prettyFormat(d))    
     
     // make first node the end node    
     selection.select('#node-0 rect')
