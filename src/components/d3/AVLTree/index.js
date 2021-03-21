@@ -168,29 +168,20 @@ const AVLTree = (props) => {
     }
 
     const displayStatus = (msg) => {
-
         const err = errors()
-        if (!avl.done || stepping) {
-            if (msg !== '') {
-                return (
-                    <div className="status">
-                        <p >
-                            {msg}
-                        </p>
-                    </div>
-                )
-            }
-        } else if (err) {
-            return (
-                <div className="status">
-                    <p >
-                        {err}
-                    </p>
-                </div>
-            )
-        }
 
+        const canMessage = !avl.done || stepping
+        const haveMessage = msg !== ""
 
+        const message = canMessage && haveMessage ? msg : (err || '')
+
+        return (
+            <div className="status">
+                <p >
+                    {message}
+                </p>
+            </div>
+        )
     }
 
     const stepUp = () => {
@@ -214,17 +205,23 @@ const AVLTree = (props) => {
         <div className="section-avl">
             <div className="controls" >
                 <div className='inputs'>
-                    <input placeholder="Enter a new value" id="input-insert" autoComplete="off" name="value" onChange={handleTextChanged} value={avl.value} disabled={(!avl.done || avl.stepping)} />
-                    <button id="btn--insert" onClick={handleInsertWithMode} disabled={disableInsert() || stepping}>Insert</button>
+                    <div className="inputSet">
+                        <input placeholder="Enter a new value" id="input-insert" autoComplete="off" name="value" onChange={handleTextChanged} value={avl.value} disabled={(!avl.done || avl.stepping)} />
+                        <button id="btn--insert" className="input-buttons" onClick={handleInsertWithMode} disabled={disableInsert() || stepping}>Insert</button>
+                    </div>
+                    <div className="inputSet">
+                        <input placeholder="Enter a value in tree" id="input-delete" autoComplete="off" name="deleteValue" onChange={props.deleteTextChanged} value={avl.deleteValue} disabled={(!avl.done || avl.stepping)} />
+                        <button id="btn--delete" className="input-buttons" onClick={handleDeleteWithMode} disabled={disableDelete() || stepping}>Delete</button>
+                    </div>
 
-                    <input placeholder="Enter a value in tree" id="input-delete" autoComplete="off" name="deleteValue" onChange={props.deleteTextChanged} value={avl.deleteValue} disabled={(!avl.done || avl.stepping)} />
-                    <button id="btn--delete" onClick={handleDeleteWithMode} disabled={disableDelete() || stepping}>Delete</button>
                 </div>
 
                 <div className='step-buttons'>
                     <button id="btn--step" onClick={handleStepping} disabled={!avl.root}>{stepping ? 'Steps Enabled' : 'Enable Steps'}</button>
-                    <button id="btn--backwards" ref={downButton} onClick={stepDown} disabled={!stepping}>Step Back</button>
-                    <button id="btn--forwards" ref={upButton} onClick={stepUp} disabled={!stepping}>Step Forward</button>
+                    <div className="direction-buttons">
+                        <button id="btn--backwards" ref={downButton} onClick={stepDown} disabled={!stepping}>Step Back</button>
+                        <button id="btn--forwards" className="right-step-btn" ref={upButton} onClick={stepUp} disabled={!stepping}>Step Forward</button>
+                    </div>
                 </div>
 
                 <button id="btn--clear" onClick={props.clearAll} disabled={stepping || !avl.root}>Clear All</button>

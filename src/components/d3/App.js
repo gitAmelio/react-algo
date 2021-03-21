@@ -30,22 +30,40 @@ const store = createStore(
     mainReducer,   
     composeEnhancers( applyMiddleware(thunk) ) 
 );
+const displayContent = () => {
 
-
-class App extends React.Component {
-    render(){
-        return (
-            <Provider store={store}>
+    const {location:{pathname}} = history
+    
+    if(pathname === '/') history.push('/stackll')
+    
+    return ( 
+        <Provider store={store}>
             <Router history={history}>
                 <Links />
                 <Switch >
-                    <Route path="/node_link" exact component={NodeLink} />
+                    <Route path="/stackll" exact component={NodeLink} />
                     <Route path="/avl_tree"  exact component={AVLTree}  />
                 </Switch>
             </Router>
-            </Provider>
-        )
+        </Provider>
+    )
+}
 
+class App extends React.Component {
+    state = {
+        loading: true
+    }
+
+    componentDidMount() {
+        this.setState({loading: false})
+    }
+
+    render(){
+        const {loading} = this.state; 
+
+        if(loading) return null 
+        
+        return displayContent()  
     }
 }
 

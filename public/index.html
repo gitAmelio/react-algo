@@ -26,13 +26,47 @@
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
     <title>React-Algo</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      #root:empty + #loader {
+        position: absolute;
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: #2e3047;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+      }
+      #root:empty + #loader > #spinner{    
+          width: 6em;
+          height: 6em;
+          border: 1.1em solid rgba(62, 68, 95, 0.2);
+          border-left: 1.1em solid #1b1447;
+          border-radius: 50%;
+          animation:  load8 1.1s infinite linear;
+      }
+      @keyframes load8 {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="loading" class="" >
+    <div id="root" class="loading"></div>
+    <div id="loader" class="" >
       <div id="spinner"></div>
     </div>
-    <div id="root"></div>
     <div id="modal"></div>
     <!--
       This HTML file is a template.
@@ -45,10 +79,6 @@
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
     <!-- <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatum cumque minima facilis ad dolore nihil, officiis numquam repellat saepe est, ducimus obcaecati eligendi ipsa iusto inventore dicta voluptate placeat itaque?</p> -->
-    <footer>
-      <p class="footer__text">
-        © 2021 - Developed by <a href=https://github.com/gitAmelio target="_blank">Amelio Croza</a>
-      </p>
-    </footer>
+    <div class='background'></div>
   </body>
 </html>

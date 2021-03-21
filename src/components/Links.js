@@ -35,7 +35,7 @@ export class Links extends Component {
     render() {
         return (
             <div className="nav">
-                <Link  onClick={this.handleLink} className={this.cssClass('Stack LinkList')}  to="/node_link">
+                <Link  onClick={this.handleLink} className={this.cssClass('Stack LinkList')}  to="/stackll">
                     {/* <i className="sign out icon" /> */}
                         Stack LinkList
                 </Link>

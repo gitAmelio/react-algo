@@ -14,6 +14,11 @@ ReactDom.render(
             <h1 >React-Algo</h1>
         </div>
         <App />
+        <footer>
+            <p className="footer__text">
+                © 2021 - Developed by <a href="https://github.com/gitAmelio" target="_blank">Amelio Croza</a>
+            </p>
+        </footer>
     </Fragment>
     , 
     document.querySelector('#root')

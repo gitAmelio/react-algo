@@ -169,16 +169,18 @@ const StackLLDS = (props) => {
         <div>
             <div className='controls'>
                 <div className='inputs'>
-                    <input placeholder="Enter value" id="input-value" name="value" autoComplete="off" onChange={props.textChanged} value={inputText()} disabled={paused} />
+                    <input placeholder="Enter value" id="input-value" class="input-text" name="value" autoComplete="off" onChange={props.textChanged} value={inputText()} disabled={paused} />
                     <button id="btn--push" onClick={() => props.push()} disabled={paused || !inputValid()}>Push</button>
                     <button id="btn--pop" onClick={() => props.pop()} disabled={paused || popDisabled()}>Pop</button>
                 </div>
 
                 <div className='step-buttons'>
                     <button id="btn--step" onClick={handlePaused} ref={refPaused}  disabled={H.empty(stackLL)}>{steppingStatus()}</button>
-                    <button id="btn--backwards" onClick={handleBackward} ref={refBackward} disabled={stepBackDisabled()}>Step Back</button>
-                    {/* TODO: need to disable button on stepping */}
-                    <button id="btn--forwards" onClick={handleForward} ref={refForward} disabled={stepForwardDisabled()}>Step Forward</button>
+                    <div className="direction-buttons">
+                        <button id="btn--backwards" onClick={handleBackward} ref={refBackward} disabled={stepBackDisabled()}>Step Back</button>
+                        {/* TODO: need to disable button on stepping */}
+                        <button id="btn--forwards" className="right-step-btn" onClick={handleForward} ref={refForward} disabled={stepForwardDisabled()}>Step Forward</button>
+                    </div>
                 </div>
 
                 <button id="btn--clear" onClick={props.clearAll} disabled={paused || H.empty(stackLL)}>Clear All</button>

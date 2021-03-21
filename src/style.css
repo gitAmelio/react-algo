@@ -1,10 +1,19 @@
 body, #root {
-    background-color: #2e3047;
     color: #3bba9c;
-    /* background-image: linear-gradient(to right bottom, #3c3f58, #2e3047); */
-    
 }
-
+.background {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: -3;
+    background-image: 
+        linear-gradient(to right bottom, #3c3f58f6, #2e3047), 
+        url('./img/stackll.png'),
+        url('./img/react-algo2.png');
+    background-color:  #2e3047;    
+}
 .app-name {
     display: flex;
     justify-content: center;
@@ -31,8 +40,7 @@ body, #root {
     padding: 6px;
     margin: 3rem 3rem 3rem 0;
     text-decoration: none;
-    border: 2px solid #2e3047;
-    border-width: 2px;
+    border: 3px solid rgba(255, 255, 255, 0);
 }
 .nav-link-focus {
     color: #3bba9c;
@@ -42,15 +50,7 @@ body, #root {
     margin: 2rem;
     color: #3bba9c;
 }
-.controls {
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    /* grid-auto-columns: 1rem; */
-    grid-column-gap: 1rem;
-    grid-template-rows: repeat(2, 1fr);
-    /* grid-template-rows: repeat(2, 5vw); */
-    grid-row-gap: 1rem;
-}
+
 input {
     background: #32374b;
     text-align: center;
@@ -73,6 +73,7 @@ button {
     border: 1px solid #707793;
     background: #2e3047;
     color: #3bba9c; 
+    height: 1.8rem;
     
 }
 button:hover {
@@ -84,23 +85,78 @@ button:disabled {
     background: #2e3047;
     color: #3c3f58;
 }
+.controls {
+    /* display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-column-gap: 1rem;
+    grid-template-rows: repeat(2, 1fr);
+    grid-row-gap: 1rem; */
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 7rem;
+}
+.inputSet {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0.5rem;
+}
 .inputs, .step-buttons {
-    grid-row: 1 / span 2;
+    /* grid-row: 1 / span 2;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows:    repeat(2, 1fr);
-    grid-gap: 1rem;
+    grid-gap: 1rem; */
+    margin: 1rem;
+    margin-right: 0;
 }
 .inputs {
-    justify-content: center;
+    /* justify-content: center;
     grid-column: 1 / span 2;
-    /* grid-column: full-start / span 2; */
-    display: grid;
+    display: grid; */
+    display: flex;
+    flex-direction: column;
+
 } 
-.step-buttons {
-    grid-column: 4 / span 2;
-    display: grid;
+.input-buttons {
+    margin-left: 1rem;
+    width: 30%;
 }
-#input-insert {
+.step-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+#btn--push, #btn--pop, .input-text {
+    margin-bottom: 0.2rem
+}
+#btn--step {
+    width: 100%;
+    margin-bottom: 0.3rem;
+}
+.direction-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.direction-buttons button {
+    height: 2.5rem;
+}
+.direction-buttons button:last-child {
+    margin-left: 0.5rem;
+}
+
+#btn--clear {
+    margin: 1rem;
+    padding: 1rem;
+    height: 70%;
+}
+
+/* .right-step-button {
+    margin-left: 0.4rem;
+} */
+/* #input-insert {
     grid-column: 1 / span 1;
     grid-row: 1 / span 1;
 }
@@ -123,7 +179,7 @@ button:disabled {
 #btn--clear {
     grid-column: 7 / span 2;
     grid-row: 1 / span 2
-}
+} */
 
 .fullname {
     display: flex;
@@ -159,20 +215,4 @@ footer p {
 footer p a {
     color: rgb(212, 205, 205);
     text-decoration: none;
-}
-
-@keyframes animate-name {
- 
-    0% {
-        stroke-dashoffset: 276;
-    }
-    
-    80% {
-        fill: transparent;
-        stroke-dashoffset: 0;
-    }
-
-    100% {
-        fill: white;
-    }
 }
