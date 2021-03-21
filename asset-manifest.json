@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/react-algo/static/css/main.348a01c8.chunk.css",
+    "main.js": "/react-algo/static/js/main.abc0bf06.chunk.js",
+    "main.js.map": "/react-algo/static/js/main.abc0bf06.chunk.js.map",
+    "runtime-main.js": "/react-algo/static/js/runtime-main.4fdab4ae.js",
+    "runtime-main.js.map": "/react-algo/static/js/runtime-main.4fdab4ae.js.map",
+    "static/js/2.289384a4.chunk.js": "/react-algo/static/js/2.289384a4.chunk.js",
+    "static/js/2.289384a4.chunk.js.map": "/react-algo/static/js/2.289384a4.chunk.js.map",
+    "index.html": "/react-algo/index.html",
+    "precache-manifest.29baafcdab9b916a6f9ebf9136d53f97.js": "/react-algo/precache-manifest.29baafcdab9b916a6f9ebf9136d53f97.js",
+    "service-worker.js": "/react-algo/service-worker.js",
+    "static/css/main.348a01c8.chunk.css.map": "/react-algo/static/css/main.348a01c8.chunk.css.map",
+    "static/js/2.289384a4.chunk.js.LICENSE.txt": "/react-algo/static/js/2.289384a4.chunk.js.LICENSE.txt",
+    "static/media/style.css": "/react-algo/static/media/stackll.27181354.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.4fdab4ae.js",
+    "static/js/2.289384a4.chunk.js",
+    "static/css/main.348a01c8.chunk.css",
+    "static/js/main.abc0bf06.chunk.js"
+  ]
+}
