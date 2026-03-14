@@ -16,7 +16,7 @@ ReactDom.render(
         <App />
         <footer>
             <p className="footer__text">
-                © 2021 - Developed by <a href="https://github.com/gitAmelio" target="_blank">Amelio Croza</a>
+                © 2021 - Developed by <a href="https://github.com/gitAmelio" target="_blank" rel="noopener noreferrer">Amelio Croza</a>
             </p>
         </footer>
     </Fragment>
